@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Modern SaaS Navbar</title>
+    <!-- Tailwind CSS v3 CDN with Plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+    <style data-purpose="custom-animations">
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .nav-transition {
+            transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Animation for the notification dot */
+        @keyframes pulse-soft {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .animate-pulse-soft {
+            animation: pulse-soft 2s infinite;
+        }
+
+        /* Modern glass-like or clean border effects */
+        .glass-border {
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .search-focus-ring:focus-within {
+            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.1), 0 0 0 1px rgba(99, 102, 241, 0.5);
+        }
+    </style>
+</head>
+
+<body class="bg-[#fcfcfd]">
+    <!-- BEGIN: MainNavbar -->
+    <nav class="bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50"
+        data-purpose="primary-navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-14">
+                <!-- BEGIN: LeftSection (Logo & Links) -->
+                <div class="flex items-center">
+                    <!-- Application Logo -->
+                    <div class="flex-shrink-0 flex items-center cursor-pointer group" data-purpose="brand-logo">
+                        <div
+                            class="h-7 w-7 bg-indigo-600 rounded-md flex items-center justify-center shadow-sm group-hover:bg-indigo-700 nav-transition">
+                            <span class="text-white font-bold text-base">S</span>
+                        </div>
+                        <span
+                            class="ml-2.5 text-[15px] font-semibold text-gray-900 hidden md:block tracking-tight">SaaSFlow</span>
+                    </div>
+                    <!-- Desktop Navigation Links -->
+                    <div class="hidden md:ml-10 md:flex md:space-x-1" data-purpose="nav-links">
+                        <a class="text-gray-900 bg-gray-50 px-3 py-1.5 rounded-md text-[13px] font-medium nav-transition"
+                            href="#">Dashboard</a>
+                        <a class="text-gray-500 hover:text-gray-900 hover:bg-gray-50 px-3 py-1.5 rounded-md text-[13px] font-medium nav-transition"
+                            href="#">Projects</a>
+                        <a class="text-gray-500 hover:text-gray-900 hover:bg-gray-50 px-3 py-1.5 rounded-md text-[13px] font-medium nav-transition"
+                            href="#">Team</a>
+                    </div>
+                </div>
+                <!-- END: LeftSection -->
+                <!-- BEGIN: RightSection (Actions & Profile) -->
+                <div class="flex items-center space-x-2">
+                    <!-- Search Bar -->
+                    <div class="hidden lg:block relative group">
+                        <div class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none">
+                            <svg class="h-3.5 w-3.5 text-gray-400" fill="none" stroke="currentColor"
+                                viewbox="0 0 24 24">
+                                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2.5"></path>
+                            </svg>
+                        </div>
+                        <input
+                            class="block w-64 pl-8 pr-3 py-1.5 border border-gray-200 rounded-lg bg-gray-50/50 text-[13px] placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-indigo-500/50 focus:bg-white nav-transition search-focus-ring"
+                            placeholder="Search or type /" type="search" />
+                        <div class="absolute inset-y-0 right-0 pr-2 flex items-center pointer-events-none">
+                            <kbd
+                                class="hidden sm:inline-block px-1.5 py-0.5 border border-gray-200 rounded text-[10px] font-medium text-gray-400 bg-white">⌘K</kbd>
+                        </div>
+                    </div>
+                    <!-- Icons Group -->
+                    <div class="flex items-center space-x-0.5 ml-2">
+                        <!-- Messages Icon -->
+                        <button
+                            class="p-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-lg nav-transition"
+                            data-purpose="messages-toggle" type="button">
+                            <span class="sr-only">View messages</span>
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path
+                                    d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                            </svg>
+                        </button>
+                        <!-- Notification Bell -->
+                        <div class="relative" data-purpose="notification-center">
+                            <button
+                                class="p-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-lg nav-transition"
+                                type="button">
+                                <span class="sr-only">View notifications</span>
+                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                    <path
+                                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                </svg>
+                                <span
+                                    class="absolute top-2 right-2.5 block h-2 w-2 rounded-full bg-indigo-500 ring-2 ring-white animate-pulse-soft"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- User Profile Dropdown -->
+                    <div class="relative flex items-center pl-3" data-purpose="user-menu">
+                        <button class="flex items-center space-x-2 p-1 pr-2 hover:bg-gray-100 rounded-lg nav-transition"
+                            id="user-menu-button" type="button">
+                            <img alt="User Profile" class="h-6 w-6 rounded-full object-cover border border-gray-200"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3BNnwMjIhMP5AS0CbOIKkg8hoStLz9l6h90H6gIbDgPRri8urK0Sjx4t1ElsUBsuPo6P7xVfi2WwWrk2QO3FVG1WqGJ4VoyoI5dMowU7XFsC619pO-WyBC0BBRNuLhJhAeqzGK2iL9I76UOPK_WGgiKvTyL5-KoJdJMn1c_FbGzP0PuFCo4mqN7OQ4qp1acx6eXXhSmaxog-9DYRpBeXQB8ahwf_AF_yLDZgYuZGaDq7RYt8ktXe0mIM9J8VxMe3BFDLdR9ZmhZED" />
+                            <span class="hidden lg:flex items-center">
+                                <span class="text-[13px] font-medium text-gray-700">Alex Rivers</span>
+                                <svg class="ml-1 h-3.5 w-3.5 text-gray-400" fill="none" stroke="currentColor"
+                                    viewbox="0 0 24 24">
+                                    <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"></path>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <!-- END: RightSection -->
+            </div>
+        </div>
+        <!-- Mobile Navigation Menu -->
+        <div class="md:hidden hidden border-t border-gray-100 bg-white" id="mobile-menu">
+            <div class="px-4 py-3 space-y-1">
+                <a class="bg-gray-50 text-indigo-600 block px-3 py-2 rounded-md text-sm font-medium"
+                    href="#">Dashboard</a>
+                <a class="text-gray-500 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-sm font-medium"
+                    href="#">Projects</a>
+                <a class="text-gray-500 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-sm font-medium"
+                    href="#">Team</a>
+            </div>
+        </div>
+    </nav>
+    <!-- END: MainNavbar -->
+    <!-- Sample Main Content -->
+    <main class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="h-[32rem] border border-gray-200 border-dashed bg-white rounded-xl flex items-center justify-center shadow-sm">
+                <p class="text-gray-400 text-sm font-medium">Main Dashboard Content</p>
+            </div>
+        </div>
+    </main>
+    <script data-purpose="ui-interactivity">
+        document.addEventListener('DOMContentLoaded', () => {
+            // Notification interaction refinement
+            const notificationBtn = document.querySelector('[data-purpose="notification-center"] button');
+            notificationBtn?.addEventListener('click', () => {
+                const dot = notificationBtn.querySelector('.bg-indigo-500');
+                if (dot) {
+                    dot.classList.add('scale-0');
+                    setTimeout(() => dot.remove(), 150);
+                }
+            });
+
+            // Search interaction logic (visual only)
+            const searchInput = document.querySelector('input[type="search"]');
+            document.addEventListener('keydown', (e) => {
+                if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+                    e.preventDefault();
+                    searchInput?.focus();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

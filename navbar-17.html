@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Modern SaaS Navbar</title>
+    <!-- BEGIN: Scripts -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#6366f1', // Indigo-600 (Modern Linear/Stripe vibe)
+                            dark: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <!-- END: Scripts -->
+    <style data-purpose="custom-transitions">
+        .nav-link {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .sticky-navbar {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Subtle underline animation like Linear/Stripe */
+        .nav-link-underline {
+            position: relative;
+        }
+
+        .nav-link-underline::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: currentColor;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link-underline:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-[#fafafa] antialiased">
+    <!-- BEGIN: MainHeader -->
+    <header class="sticky-navbar sticky top-0 z-50 w-full border-b border-gray-100 bg-white/70">
+        <nav aria-label="Top" class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="flex h-14 items-center justify-between">
+                <!-- BEGIN: CenteredNavigationContainer -->
+                <div class="flex flex-1 items-center justify-between md:justify-center">
+                    <!-- BEGIN: BrandLogo -->
+                    <div class="flex shrink-0 items-center md:mr-10" data-purpose="logo-container">
+                        <a class="flex items-center gap-2.5 group" href="#">
+                            <div
+                                class="h-7 w-7 rounded-md bg-indigo-600 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+                                <span class="text-white font-bold text-sm tracking-tighter">S</span>
+                            </div>
+                            <span class="text-[15px] font-semibold tracking-tight text-slate-900">SaaSFlow</span>
+                        </a>
+                    </div>
+                    <!-- END: BrandLogo -->
+                    <!-- BEGIN: NavLinks -->
+                    <div class="hidden md:flex md:items-center md:space-x-8" data-purpose="primary-navigation">
+                        <a class="nav-link nav-link-underline text-[13.5px] font-medium text-slate-500 hover:text-slate-900"
+                            href="#features">Features</a>
+                        <a class="nav-link nav-link-underline text-[13.5px] font-medium text-slate-500 hover:text-slate-900"
+                            href="#solutions">Solutions</a>
+                        <a class="nav-link nav-link-underline text-[13.5px] font-medium text-slate-500 hover:text-slate-900"
+                            href="#pricing">Pricing</a>
+                        <a class="nav-link nav-link-underline text-[13.5px] font-medium text-slate-500 hover:text-slate-900"
+                            href="#resources">Resources</a>
+                    </div>
+                    <!-- END: NavLinks -->
+                    <!-- BEGIN: AuthButtons -->
+                    <div class="hidden md:flex md:items-center md:ml-10 md:space-x-6">
+                        <a class="nav-link text-[13.5px] font-medium text-slate-500 hover:text-slate-900" href="/login">
+                            Log in
+                        </a>
+                        <a class="inline-flex items-center justify-center rounded-full bg-slate-900 px-4 py-1.5 text-[13px] font-medium text-white shadow-[0_1px_2px_rgba(0,0,0,0.1)] hover:bg-slate-800 transition-colors"
+                            href="/signup">
+                            Get started
+                        </a>
+                    </div>
+                    <!-- END: AuthButtons -->
+                </div>
+                <!-- END: CenteredNavigationContainer -->
+                <!-- Mobile Menu Button -->
+                <div class="flex md:hidden">
+                    <button aria-controls="mobile-menu" aria-expanded="false"
+                        class="inline-flex items-center justify-center rounded-md p-2 text-slate-500 hover:bg-slate-50 focus:outline-none"
+                        data-purpose="mobile-toggle" id="mobile-menu-button" type="button">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- BEGIN: MobileMenu -->
+        <div class="hidden md:hidden" data-purpose="mobile-dropdown" id="mobile-menu">
+            <div class="space-y-1 px-6 pb-6 pt-2 bg-white border-b border-gray-100">
+                <a class="block rounded-md py-2.5 text-sm font-medium text-slate-600 hover:text-indigo-600"
+                    href="#features">Features</a>
+                <a class="block rounded-md py-2.5 text-sm font-medium text-slate-600 hover:text-indigo-600"
+                    href="#solutions">Solutions</a>
+                <a class="block rounded-md py-2.5 text-sm font-medium text-slate-600 hover:text-indigo-600"
+                    href="#pricing">Pricing</a>
+                <a class="block rounded-md py-2.5 text-sm font-medium text-slate-600 hover:text-indigo-600"
+                    href="#resources">Resources</a>
+                <div class="mt-4 border-t border-gray-50 pt-4">
+                    <a class="block py-2.5 text-sm font-medium text-slate-600" href="/login">Log in</a>
+                    <a class="mt-2 block rounded-lg bg-slate-900 px-4 py-2.5 text-center text-sm font-medium text-white shadow-sm"
+                        href="/signup">Get started</a>
+                </div>
+            </div>
+        </div>
+        <!-- END: MobileMenu -->
+    </header>
+    <!-- END: MainHeader -->
+    <!-- Dummy Content to show sticky effect -->
+    <main class="py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+            <h1 class="text-5xl font-bold tracking-tight text-slate-900 sm:text-7xl mb-8 leading-[1.1]">
+                The complete platform <br class="hidden sm:block" /> for modern teams.
+            </h1>
+            <p class="mx-auto max-w-2xl text-[17px] leading-relaxed text-slate-500 mb-12">
+                Streamline your workflow, manage your projects, and scale your business with SaaSFlow's all-in-one
+                workspace.
+            </p>
+            <div class="mx-auto max-w-5xl">
+                <div
+                    class="aspect-[16/9] bg-white border border-slate-200/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex items-center justify-center text-slate-400 overflow-hidden">
+                    <div
+                        class="w-full h-full bg-gradient-to-br from-slate-50 to-white flex items-center justify-center text-slate-400 font-medium">
+                        Interface Preview Area
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script data-purpose="mobile-menu-logic">
+        // Simple toggle logic for mobile menu visibility
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', !isExpanded);
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Modern SaaS Navbar</title>
+    <!-- Google Fonts: Inter for that clean, SaaS aesthetic -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+    <!-- Tailwind CSS CDN with Plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Linear/Stripe inspired sophisticated dark palette
+                        brand: {
+                            primary: '#5e6ad2',
+                            hover: '#737ee0',
+                        },
+                        dark: {
+                            bg: '#08090a', // Deeper black for high precision look
+                            surface: '#111214',
+                            border: 'rgba(255, 255, 255, 0.08)',
+                            borderHover: 'rgba(255, 255, 255, 0.15)',
+                        }
+                    },
+                    boxShadow: {
+                        'glass': '0 4px 30px rgba(0, 0, 0, 0.1)',
+                        'nav': '0 1px 0 0 rgba(255, 255, 255, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- BEGIN: Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .nav-link {
+            transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Subtle glass effect for the navbar */
+        .glass-nav {
+            background: rgba(8, 9, 10, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+    <!-- END: Custom Styles -->
+</head>
+
+<body class="bg-dark-bg text-slate-400 antialiased font-sans">
+    <!-- BEGIN: MainHeader -->
+    <header class="sticky top-0 z-50 w-full border-b border-dark-border glass-nav shadow-nav">
+        <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
+            <!-- Logo Container -->
+            <div class="flex lg:flex-1" data-purpose="brand-logo">
+                <a class="-m-1.5 p-1.5 flex items-center gap-2.5 group" href="#">
+                    <span class="sr-only">Lumina</span>
+                    <div
+                        class="h-7 w-7 rounded-md bg-brand-primary flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shadow-lg shadow-brand-primary/20">
+                        <svg class="h-4 w-4 text-white" fill="none" stroke="currentColor" stroke-width="2.5"
+                            viewbox="0 0 24 24">
+                            <path d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+                    <span class="text-[15px] font-semibold tracking-[-0.01em] text-white">Lumina</span>
+                </a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="flex lg:hidden">
+                <button
+                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-slate-400 hover:text-white"
+                    id="mobile-menu-open" type="button">
+                    <span class="sr-only">Open main menu</span>
+                    <svg aria-hidden="true" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"
+                        viewbox="0 0 24 24">
+                        <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Main Navigation Links -->
+            <div class="hidden lg:flex lg:gap-x-1" data-purpose="navigation-links">
+                <a class="nav-link px-3 py-1.5 text-[13px] font-medium text-slate-400 hover:text-white rounded-md hover:bg-white/[0.05]"
+                    href="#">Dashboard</a>
+                <a class="nav-link px-3 py-1.5 text-[13px] font-medium text-slate-400 hover:text-white rounded-md hover:bg-white/[0.05]"
+                    href="#">Analytics</a>
+                <a class="nav-link px-3 py-1.5 text-[13px] font-medium text-slate-400 hover:text-white rounded-md hover:bg-white/[0.05]"
+                    href="#">Automations</a>
+                <a class="nav-link px-3 py-1.5 text-[13px] font-medium text-slate-400 hover:text-white rounded-md hover:bg-white/[0.05]"
+                    href="#">Resources</a>
+            </div>
+            <!-- Right Side Actions -->
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-x-5" data-purpose="user-actions">
+                <!-- Sign In Link -->
+                <a class="text-[13px] font-medium text-slate-400 hover:text-white transition-colors" href="#">Log in</a>
+                <!-- Upgrade Button (CTA) -->
+                <a class="rounded-md bg-brand-primary px-3.5 py-1.5 text-[13px] font-semibold text-white shadow-[0_1px_2px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.1)] hover:bg-brand-hover transition-all active:scale-[0.98]"
+                    href="#">
+                    Upgrade Pro
+                </a>
+                <!-- User Profile -->
+                <div class="flex items-center pl-5 border-l border-dark-border">
+                    <button
+                        class="relative rounded-full p-0.5 focus:outline-none ring-1 ring-dark-border hover:ring-white/20 transition-all">
+                        <img alt="User avatar"
+                            class="h-6 w-6 rounded-full grayscale-[20%] hover:grayscale-0 transition-all"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgetcjhYl1-lBndcGHrSBbZXluorNwtDoGS1HBReGHmvkhOHBd12-3dxoFqKEWlEgB6WI8EtyDoFVlx8vo2SXL4d79w1kAK0M8Oj-qvbytJjjwt7_wjMw8T7DDApLLM5NVaHY9kFOwrVphfN_d7hv-LuGnLI_P-2c2p5falTeeq4R3BGFrTO6xkLzXlHL1KuHfxLDTPWZG_aGqvJ_K0Y5_mzuv1i5hfzxBRrjTThicWRZ-JWW-cChZ5seGR6fXl4fk5QDcIJweWoHo" />
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- Mobile menu -->
+        <div aria-modal="true" class="hidden lg:hidden" id="mobile-menu" role="dialog">
+            <div class="fixed inset-0 z-50 bg-dark-bg/60 backdrop-blur-sm"></div>
+            <div
+                class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-dark-surface px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10 shadow-2xl">
+                <div class="flex items-center justify-between">
+                    <a class="-m-1.5 p-1.5 flex items-center gap-2" href="#">
+                        <div class="h-6 w-6 rounded bg-brand-primary flex items-center justify-center">
+                            <svg class="h-3 w-3 text-white" fill="none" stroke="currentColor" stroke-width="2.5"
+                                viewbox="0 0 24 24">
+                                <path d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                        <span class="text-sm font-semibold text-white">Lumina</span>
+                    </a>
+                    <button class="-m-2.5 rounded-md p-2.5 text-slate-400 hover:text-white" id="mobile-menu-close"
+                        type="button">
+                        <span class="sr-only">Close menu</span>
+                        <svg aria-hidden="true" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"
+                            viewbox="0 0 24 24">
+                            <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="mt-6 flow-root">
+                    <div class="-my-6 divide-y divide-white/5">
+                        <div class="space-y-1 py-6">
+                            <a class="-mx-3 block rounded-md px-3 py-2 text-sm font-medium text-slate-300 hover:bg-white/[0.03] hover:text-white"
+                                href="#">Dashboard</a>
+                            <a class="-mx-3 block rounded-md px-3 py-2 text-sm font-medium text-slate-300 hover:bg-white/[0.03] hover:text-white"
+                                href="#">Analytics</a>
+                            <a class="-mx-3 block rounded-md px-3 py-2 text-sm font-medium text-slate-300 hover:bg-white/[0.03] hover:text-white"
+                                href="#">Automations</a>
+                            <a class="-mx-3 block rounded-md px-3 py-2 text-sm font-medium text-slate-300 hover:bg-white/[0.03] hover:text-white"
+                                href="#">Resources</a>
+                        </div>
+                        <div class="py-6 flex flex-col gap-3">
+                            <a class="text-sm font-medium text-slate-300 hover:text-white" href="#">Log in</a>
+                            <a class="block rounded-md bg-brand-primary text-center px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-hover"
+                                href="#">Upgrade Pro</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- END: MainHeader -->
+    <!-- BEGIN: Interactive Logic -->
+    <script data-purpose="mobile-menu-toggle">
+        const openBtn = document.getElementById('mobile-menu-open');
+        const closeBtn = document.getElementById('mobile-menu-close');
+        const menu = document.getElementById('mobile-menu');
+
+        function closeMenu() {
+            menu.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        openBtn.addEventListener('click', () => {
+            menu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeBtn.addEventListener('click', closeMenu);
+
+        // Close on backdrop click
+        menu.querySelector('div:first-child').addEventListener('click', closeMenu);
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !menu.classList.contains('hidden')) closeMenu();
+        });
+    </script>
+    <!-- END: Interactive Logic -->
+</body>
+
+</html>

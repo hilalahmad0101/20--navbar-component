@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Modern SaaS Navbar</title>
+    <!-- Tailwind CSS v3 with Plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Inter Font for that clean SaaS look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#080808',
+                            surface: '#0f0f0f',
+                            accent: '#ffffff',
+                            muted: '#888888'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style data-purpose="custom-transitions">
+        .nav-link {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-link:hover {
+            color: #ffffff;
+        }
+
+        /* Subtle border-bottom animation or glow could go here */
+        .active-nav-link {
+            color: #ffffff;
+            position: relative;
+        }
+
+        .active-nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -21px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #ffffff;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+
+<body class="bg-brand-black text-white antialiased font-sans">
+    <!-- BEGIN: MainNavbar -->
+    <nav class="sticky top-0 z-50 w-full border-b border-white/[0.08] bg-brand-black/70 backdrop-blur-xl"
+        data-purpose="primary-navigation">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-14 items-center justify-between">
+                <!-- BEGIN: LogoSection -->
+                <div class="flex flex-1 items-center" data-purpose="logo-container">
+                    <a class="flex items-center space-x-2.5 group" href="#">
+                        <div
+                            class="flex h-7 w-7 items-center justify-center rounded-md bg-white text-black shadow-lg shadow-white/10 transition-transform group-hover:scale-105">
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5"
+                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round">
+                                </path>
+                            </svg>
+                        </div>
+                        <span class="text-[15px] font-semibold tracking-tight text-white/90">DataStore</span>
+                    </a>
+                </div>
+                <!-- END: LogoSection -->
+                <!-- BEGIN: CenterNavigation -->
+                <div class="hidden md:block" data-purpose="centered-links">
+                    <div class="flex items-center space-x-7">
+                        <a class="nav-link text-[13px] font-medium text-brand-muted active-nav-link"
+                            href="#">Dashboard</a>
+                        <a class="nav-link text-[13px] font-medium text-brand-muted" href="#">Projects</a>
+                        <a class="nav-link text-[13px] font-medium text-brand-muted" href="#">Analytics</a>
+                        <a class="nav-link text-[13px] font-medium text-brand-muted" href="#">Settings</a>
+                    </div>
+                </div>
+                <!-- END: CenterNavigation -->
+                <!-- BEGIN: UserActions -->
+                <div class="flex flex-1 items-center justify-end space-x-5" data-purpose="user-controls">
+                    <!-- Notifications -->
+                    <button
+                        class="icon-btn group relative rounded-md p-1.5 text-brand-muted hover:text-white transition-colors focus:outline-none"
+                        data-purpose="notification-bell" type="button">
+                        <span class="sr-only">View notifications</span>
+                        <svg class="h-[18px] w-[18px]" fill="none" stroke="currentColor" stroke-width="2"
+                            viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        <!-- Refined Notification Dot -->
+                        <span class="absolute top-2 right-2 flex h-1.5 w-1.5">
+                            <span
+                                class="absolute inline-flex h-full w-full rounded-full bg-white opacity-40 animate-ping"></span>
+                            <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-white"></span>
+                        </span>
+                    </button>
+                    <!-- Profile -->
+                    <div class="relative">
+                        <button aria-expanded="false" aria-haspopup="true"
+                            class="flex items-center space-x-2 group focus:outline-none" id="user-menu-button"
+                            type="button">
+                            <div
+                                class="h-7 w-7 overflow-hidden rounded-full border border-white/10 transition-colors group-hover:border-white/30">
+                                <img alt="User Avatar" class="h-full w-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ1sfMe1x_Hinhz3EPKINMt9x4lsLMM3F8Sw4dvY3_XBE36im6bVXPmGGcO4V8h-mqhqq8FkNteMi64-DTgJOLfSlZuaS9euS8hwQlURqPhm7heLq1MqBUkHBmaS19KHGcssXJVbjpzkAB14lOw7u2DljzvzbqjnM9OGVqJy9Cy9NJXhF2_WGVWvH3zDspnGQKcEwavw63uYfIDv4Pj2Kosqhw7gN6L6uWpnFBPsZT6-Ena633amatlVsFKPve0zP0bB3xBYi4R4Xt" />
+                            </div>
+                        </button>
+                    </div>
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden">
+                        <button aria-controls="mobile-menu" aria-expanded="false"
+                            class="inline-flex items-center justify-center rounded-md p-1.5 text-brand-muted hover:bg-white/5 hover:text-white transition-all focus:outline-none"
+                            type="button">
+                            <svg class="block h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"
+                                viewbox="0 0 24 24">
+                                <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <!-- END: UserActions -->
+            </div>
+        </div>
+        <!-- BEGIN: MobileMenu -->
+        <div class="hidden border-b border-white/[0.08] bg-brand-black md:hidden" data-purpose="mobile-navigation"
+            id="mobile-menu">
+            <div class="space-y-1 px-4 pb-4 pt-2">
+                <a class="block rounded-md px-3 py-2 text-[14px] font-medium text-white bg-white/5"
+                    href="#">Dashboard</a>
+                <a class="block rounded-md px-3 py-2 text-[14px] font-medium text-brand-muted hover:bg-white/5 hover:text-white transition-colors"
+                    href="#">Projects</a>
+                <a class="block rounded-md px-3 py-2 text-[14px] font-medium text-brand-muted hover:bg-white/5 hover:text-white transition-colors"
+                    href="#">Analytics</a>
+                <a class="block rounded-md px-3 py-2 text-[14px] font-medium text-brand-muted hover:bg-white/5 hover:text-white transition-colors"
+                    href="#">Settings</a>
+            </div>
+        </div>
+        <!-- END: MobileMenu -->
+    </nav>
+    <!-- END: MainNavbar -->
+    <main class="relative min-h-[calc(100vh-3.5rem)] overflow-hidden">
+        <!-- Subtle background gradient/noise common in modern dark SaaS -->
+        <div
+            class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.03)_0%,transparent_50%)] pointer-events-none">
+        </div>
+        <div class="relative mx-auto max-w-5xl px-6 py-24 text-center sm:py-32">
+            <h1 class="text-5xl font-bold tracking-tight text-white sm:text-7xl">
+                Clean. Fast. <span class="text-brand-muted">Data.</span>
+            </h1>
+            <p class="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-brand-muted sm:text-lg">
+                Welcome to your DataStore dashboard. Efficiently manage snapshots and scale your enterprise data
+                pipelines with refined precision.
+            </p>
+            <div class="mt-12 flex items-center justify-center gap-x-6">
+                <a class="rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-zinc-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                    href="#">Get started</a>
+                <a class="text-sm font-semibold leading-6 text-white flex items-center group" href="#">
+                    Learn more <span class="ml-1.5 transition-transform group-hover:translate-x-0.5">→</span>
+                </a>
+            </div>
+        </div>
+    </main>
+    <script data-purpose="navbar-interactivity">
+        const menuBtn = document.querySelector('[aria-controls="mobile-menu"]');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+                menuBtn.setAttribute('aria-expanded', !expanded);
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+
+</html>

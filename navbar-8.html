@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Modern SaaS Navbar</title>
+    <!-- BEGIN: Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <!-- END: Google Fonts -->
+    <!-- BEGIN: Tailwind CSS Integration -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            primary: '#0066FF', // Sophisticated blue
+                            dark: '#0F172A' // Slate 900
+                        },
+                        ui: {
+                            border: '#E2E8F0', // Slate 200
+                            subtle: '#F8FAFC' // Slate 50
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.05)',
+                        'glass': '0 4px 6px -1px rgb(0 0 0 / 0.02), 0 2px 4px -2px rgb(0 0 0 / 0.02)'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- END: Tailwind CSS Integration -->
+    <!-- BEGIN: Custom Styles -->
+    <style data-purpose="layout-adjustments">
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        #sidebar {
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .sidebar-collapsed #sidebar {
+            width: 0;
+            transform: translateX(-100%);
+        }
+
+        .sidebar-collapsed #main-content {
+            margin-left: 0;
+        }
+
+        /* Subtle scrollbar for modern feel */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #E2E8F0;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #CBD5E1;
+        }
+    </style>
+    <!-- END: Custom Styles -->
+</head>
+
+<body class="bg-white text-slate-900">
+    <!-- BEGIN: Navbar Section -->
+    <header class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/90 backdrop-blur-xl"
+        data-purpose="main-navigation">
+        <div class="flex h-14 items-center justify-between px-4">
+            <!-- BEGIN: Left Navigation Group -->
+            <div class="flex items-center gap-3">
+                <!-- Sidebar Toggle Button -->
+                <button aria-label="Toggle Sidebar"
+                    class="inline-flex items-center justify-center rounded-md p-1.5 text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-200"
+                    data-purpose="sidebar-control" id="sidebar-toggle" type="button">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+                        <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+                <!-- Brand Logo -->
+                <a class="flex items-center gap-2 group" data-purpose="brand-link" href="#">
+                    <div
+                        class="flex h-7 w-7 items-center justify-center rounded-[6px] bg-brand-primary text-white font-bold text-sm shadow-sm">
+                        S
+                    </div>
+                    <span class="hidden font-semibold text-sm tracking-tight text-slate-900 sm:inline-block">
+                        SaaS<span class="text-slate-500 font-medium">Flow</span>
+                    </span>
+                </a>
+            </div>
+            <!-- END: Left Navigation Group -->
+            <!-- BEGIN: Right Search Group -->
+            <div class="flex flex-1 items-center justify-end gap-x-4">
+                <!-- Search Container -->
+                <div class="w-full max-w-sm lg:max-w-[280px]" data-purpose="global-search-container">
+                    <label class="sr-only" for="search">Search</label>
+                    <div class="relative group">
+                        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                            <svg aria-hidden="true"
+                                class="h-4 w-4 text-slate-400 group-focus-within:text-brand-primary transition-colors"
+                                fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                                <path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                        <input
+                            class="block w-full rounded-lg border border-slate-200 bg-slate-50 py-1.5 pl-9 pr-3 text-slate-900 placeholder:text-slate-500 focus:bg-white focus:ring-2 focus:ring-slate-200 focus:border-slate-300 sm:text-xs transition-all outline-none"
+                            id="search" name="search" placeholder="Search..." type="search" />
+                        <!-- Keyboard Shortcut Hint -->
+                        <div class="absolute inset-y-0 right-0 hidden items-center pr-2 lg:flex">
+                            <kbd
+                                class="rounded border border-slate-200 bg-white px-1.5 py-0.5 font-sans text-[10px] font-medium text-slate-400 shadow-sm">⌘K</kbd>
+                        </div>
+                    </div>
+                </div>
+                <!-- User Profile Placeholder -->
+                <div class="flex items-center gap-2 pl-2">
+                    <button
+                        class="flex rounded-full border border-slate-200 p-0.5 hover:border-slate-300 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-200"
+                        id="user-menu-button" type="button">
+                        <img alt="User Avatar" class="h-7 w-7 rounded-full"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWQvSNd74ajW12F22SZ5JHml2SyA_liIQPJYk29y6it77ngII0OAX78CfudgIlaEzSjdW9bPUYjF_9VCmgkDhEgcOoFBUEbu2nkE6PnIbb4J5Qo9ClJeLMplVc8Qw_4Dt76gWHt4C4ZLWi4uTBoSV98siNOQ0gwT2EO4Qk6fReU4Ae3DFW0KvSWbL-g9cSIOWm5LMn97WWQLPs3wvTQSlqhSgphjYPp2uOJTFCiVFZbHpDOUyotYTfN-_xmSf7cGw7oRuHQmFvsk-K" />
+                    </button>
+                </div>
+            </div>
+            <!-- END: Right Search Group -->
+        </div>
+    </header>
+    <!-- END: Navbar Section -->
+    <!-- BEGIN: Main Layout Content -->
+    <div class="flex flex-1 overflow-hidden" data-purpose="app-shell-body">
+        <!-- BEGIN: Sidebar -->
+        <aside class="w-60 border-r border-slate-100 bg-slate-50/50" data-purpose="main-sidebar" id="sidebar">
+            <nav class="flex flex-col gap-y-0.5 p-3">
+                <a aria-current="page"
+                    class="group flex items-center rounded-md bg-white px-3 py-1.5 text-xs font-medium text-slate-900 shadow-sm border border-slate-200/60"
+                    href="#">
+                    Dashboard
+                </a>
+                <a class="group flex items-center rounded-md px-3 py-1.5 text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors"
+                    href="#">
+                    Analytics
+                </a>
+                <a class="group flex items-center rounded-md px-3 py-1.5 text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors"
+                    href="#">
+                    Projects
+                </a>
+                <a class="group flex items-center rounded-md px-3 py-1.5 text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors"
+                    href="#">
+                    Settings
+                </a>
+            </nav>
+        </aside>
+        <!-- END: Sidebar -->
+        <!-- BEGIN: Main Page Content -->
+        <main class="flex-1 overflow-y-auto bg-white p-8" data-purpose="page-content" id="main-content">
+            <div class="mx-auto max-w-5xl">
+                <h1 class="text-xl font-semibold tracking-tight text-slate-900">Welcome back</h1>
+                <div
+                    class="mt-6 border border-slate-200 border-dashed rounded-xl h-96 flex items-center justify-center text-sm text-slate-400 bg-slate-50/50">
+                    Dashboard Content Here
+                </div>
+            </div>
+        </main>
+        <!-- END: Main Page Content -->
+    </div>
+    <!-- END: Main Layout Content -->
+    <!-- BEGIN: Logic -->
+    <script data-purpose="sidebar-functionality">
+        /**
+         * Logic to handle the sidebar toggle state
+         */
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleBtn = document.getElementById('sidebar-toggle');
+            const body = document.body;
+
+            toggleBtn.addEventListener('click', () => {
+                body.classList.toggle('sidebar-collapsed');
+            });
+
+            // Keyboard shortcut for search focus
+            document.addEventListener('keydown', (e) => {
+                if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+                    e.preventDefault();
+                    document.getElementById('search').focus();
+                }
+            });
+        });
+    </script>
+    <!-- END: Logic -->
+</body>
+
+</html>

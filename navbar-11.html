@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Modern SaaS Navbar with Progress</title>
+    <!-- Tailwind CSS v3 CDN with plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            padding-top: 5.5rem;
+        }
+
+        .navbar-glass {
+            background-color: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+
+<body class="bg-[#fafafa] text-slate-900 selection:bg-indigo-100 selection:text-indigo-700">
+    <!-- BEGIN: MainNavbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-slate-200/60 navbar-glass"
+        data-purpose="primary-navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-14">
+                <!-- BEGIN: BrandLogo -->
+                <div class="flex-shrink-0 flex items-center gap-2.5">
+                    <div
+                        class="w-7 h-7 bg-indigo-600 rounded-md flex items-center justify-center text-white font-bold text-base shadow-sm shadow-indigo-200">
+                        S
+                    </div>
+                    <span class="font-semibold text-[15px] tracking-tight text-slate-900">SaaSFlow</span>
+                </div>
+                <!-- END: BrandLogo -->
+                <!-- BEGIN: NavLinks -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a class="text-[13px] font-medium text-slate-500 hover:text-slate-900 transition-colors"
+                        href="#">Dashboard</a>
+                    <a class="text-[13px] font-medium text-slate-500 hover:text-slate-900 transition-colors"
+                        href="#">Projects</a>
+                    <a class="text-[13px] font-medium text-slate-500 hover:text-slate-900 transition-colors"
+                        href="#">Team</a>
+                    <a class="text-[13px] font-medium text-slate-500 hover:text-slate-900 transition-colors"
+                        href="#">Reports</a>
+                </div>
+                <!-- END: NavLinks -->
+                <!-- BEGIN: UserActions -->
+                <div class="flex items-center space-x-3">
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden p-1.5 text-slate-400 hover:text-slate-700 transition-colors focus:outline-none" id="mobile-menu-toggle" type="button">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </button>
+                    <!-- Notification Bell -->
+                    <button class="p-1.5 text-slate-400 hover:text-slate-600 transition-colors focus:outline-none"
+                        data-purpose="notifications-toggle">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path
+                                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                        </svg>
+                    </button>
+                    <!-- Upgrade Button -->
+                    <button
+                        class="hidden sm:block px-3 py-1.5 text-[13px] font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition-all shadow-sm shadow-indigo-100 active:scale-[0.98]">
+                        Upgrade Plan
+                    </button>
+                    <!-- Avatar -->
+                    <div class="flex items-center pl-1" data-purpose="user-profile">
+                        <img alt="User Avatar" class="h-7 w-7 rounded-full border border-slate-200 object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOoeTc_TT7t-FJ4vwjgEzaVlzQJp-9JLO1_V7kj3qfhbzVBzfFKWygMMnJPNh_JsjEFWV_4obIdur6B_uqE6N5dipm8xSadkaRVNaoLjJL6EGWy_Eo-bJ2pkZOhg38GcrjH5gsS6DnGsg9kM8kvZBBNmV6kQkx2zDdbINHlYsKtHHJUpyiLN_bZNiXi7Wopxzc8zdaO91UD_C3rQGHm8ciMYbEZCubqm6lAqrN58KPvhOMdV8Jpv5FLNPsm5vwGRJMzpnNao3vic6s" />
+                    </div>
+                </div>
+                <!-- END: UserActions -->
+            </div>
+        </div>
+        <!-- BEGIN: TrialBannerSection -->
+        <div class="bg-indigo-50/40 border-t border-slate-200/40 px-4 py-2" data-purpose="trial-status-banner">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="flex items-center gap-1.5">
+                        <span class="relative flex h-1.5 w-1.5">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-indigo-600"></span>
+                        </span>
+                        <span class="text-[12px] font-medium text-indigo-900">
+                            Trial ends in 3 days
+                        </span>
+                    </div>
+                    <span class="hidden sm:inline text-slate-300">|</span>
+                    <a class="hidden sm:inline text-[12px] text-indigo-600/80 hover:text-indigo-600 transition-colors font-medium"
+                        href="#">
+                        Select a plan to maintain access
+                    </a>
+                </div>
+                <!-- Progress Bar Container -->
+                <div class="flex items-center gap-3 w-40 sm:w-48">
+                    <div class="flex-1 bg-indigo-100 rounded-full h-1 overflow-hidden">
+                        <div class="bg-indigo-600 h-full rounded-full w-[78%]" data-purpose="progress-fill"></div>
+                    </div>
+                    <span class="text-[11px] font-semibold text-indigo-700/80 tabular-nums">11/14 d</span>
+                </div>
+            </div>
+        </div>
+        <!-- END: TrialBannerSection -->
+        <!-- BEGIN: MobileMenu -->
+        <div class="hidden md:hidden border-t border-slate-200/60 navbar-glass" id="mobile-menu">
+            <div class="max-w-7xl mx-auto px-4 pt-2 pb-4 space-y-1">
+                <a class="block px-3 py-2.5 text-[13px] font-medium text-slate-500 hover:text-slate-900 hover:bg-slate-100/60 rounded-lg transition-colors" href="#">Dashboard</a>
+                <a class="block px-3 py-2.5 text-[13px] font-medium text-slate-500 hover:text-slate-900 hover:bg-slate-100/60 rounded-lg transition-colors" href="#">Projects</a>
+                <a class="block px-3 py-2.5 text-[13px] font-medium text-slate-500 hover:text-slate-900 hover:bg-slate-100/60 rounded-lg transition-colors" href="#">Team</a>
+                <a class="block px-3 py-2.5 text-[13px] font-medium text-slate-500 hover:text-slate-900 hover:bg-slate-100/60 rounded-lg transition-colors" href="#">Reports</a>
+                <div class="pt-2 border-t border-slate-200/60">
+                    <a class="block text-center px-3 py-2.5 text-[13px] font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg transition-all active:scale-[0.98]" href="#">Upgrade Plan</a>
+                </div>
+            </div>
+        </div>
+        <!-- END: MobileMenu -->
+    </nav>
+    <!-- END: MainNavbar -->
+    <script data-purpose="mobile-menu-toggle">
+        const toggle = document.getElementById('mobile-menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        const openIcon = `<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path>`;
+        const closeIcon = `<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>`;
+
+        toggle.addEventListener('click', () => {
+            const isOpen = !menu.classList.toggle('hidden');
+            toggle.querySelector('svg').innerHTML = isOpen ? closeIcon : openIcon;
+        });
+    </script>
+    <!-- BEGIN: MainContentPlaceholder -->
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        <div
+            class="bg-white rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.02),0_1px_2px_rgba(0,0,0,0.04)] border border-slate-200/60 p-10">
+            <h1 class="text-2xl font-semibold text-slate-900 tracking-tight mb-4">Welcome back, Alex!</h1>
+            <p class="text-[15px] leading-relaxed text-slate-500 max-w-2xl">This is a demonstration of a SaaS navigation
+                bar with an integrated trial progress banner. The aesthetic follows modern design principles found in
+                top-tier productivity tools.</p>
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div
+                    class="h-32 bg-slate-50/50 rounded-xl border border-dashed border-slate-200 transition-colors hover:bg-slate-50">
+                </div>
+                <div
+                    class="h-32 bg-slate-50/50 rounded-xl border border-dashed border-slate-200 transition-colors hover:bg-slate-50">
+                </div>
+                <div
+                    class="h-32 bg-slate-50/50 rounded-xl border border-dashed border-slate-200 transition-colors hover:bg-slate-50">
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- END: MainContentPlaceholder -->
+</body>
+
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NexusSaaS | Enterprise Platform</title>
+    <!-- BEGIN: Tailwind CSS Integration -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- END: Tailwind CSS Integration -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Refined smooth transition for dropdown menus */
+        .dropdown-content {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(4px);
+            transition: all 0.15s cubic-bezier(0, 0, 0.2, 1);
+        }
+
+        .group:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-[#fcfcfd]">
+    <!-- BEGIN: MultiTierNavbar -->
+    <nav class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100"
+        data-purpose="main-navigation-container">
+        <!-- BEGIN: TopUtilityBar -->
+        <div class="bg-gray-50/50 border-b border-gray-100 py-2" data-purpose="utility-bar">
+            <div
+                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-end items-center space-x-5 text-[11px] font-medium text-gray-500 uppercase tracking-widest">
+                <a class="hover:text-indigo-600 transition-colors duration-200" data-purpose="utility-link"
+                    href="#">Support</a>
+                <a class="hover:text-indigo-600 transition-colors duration-200" data-purpose="utility-link"
+                    href="#">Blog</a>
+                <a class="hover:text-indigo-600 transition-colors duration-200" data-purpose="utility-link"
+                    href="#">Careers</a>
+                <span class="h-3 w-[1px] bg-gray-200"></span>
+                <a class="hover:text-indigo-600 flex items-center gap-1.5 transition-colors duration-200"
+                    href="tel:1-800-ENTERPRISE">
+                    <svg class="h-3 w-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                    Sales: +1 (800) 555-0199
+                </a>
+            </div>
+        </div>
+        <!-- END: TopUtilityBar -->
+        <!-- BEGIN: MainNavigationBar -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-purpose="primary-nav-bar">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Logo Section -->
+                <div class="flex-shrink-0 flex items-center" data-purpose="brand-logo">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-8 h-8 bg-indigo-600 rounded-md flex items-center justify-center shadow-sm">
+                            <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2.5"></path>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-gray-900 tracking-tight">Nexus<span
+                                class="text-indigo-600">SaaS</span></span>
+                    </div>
+                </div>
+                <!-- Primary Desktop Links -->
+                <div class="hidden lg:flex items-center space-x-1" data-purpose="desktop-nav-links">
+                    <!-- Dropdown: Platform -->
+                    <div class="relative group" data-purpose="nav-item-dropdown">
+                        <button
+                            class="flex items-center px-4 py-2 text-[14px] font-medium text-gray-600 hover:text-indigo-600 rounded-md hover:bg-gray-50 transition-all duration-200">
+                            Platform
+                            <svg class="ml-1 h-3.5 w-3.5 opacity-60" fill="currentColor" viewbox="0 0 20 20">
+                                <path clip-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    fill-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-content absolute left-0 mt-1 w-[280px] bg-white border border-gray-100 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] rounded-xl p-2 z-50">
+                            <div class="space-y-1">
+                                <a class="flex items-start gap-3 p-3 hover:bg-gray-50 rounded-lg group/item transition-colors"
+                                    href="#">
+                                    <div
+                                        class="w-8 h-8 rounded-md bg-indigo-50 flex items-center justify-center text-indigo-600 shrink-0">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                            <path
+                                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-semibold text-gray-900">Analytics Engine</p>
+                                        <p class="text-[12px] text-gray-500 leading-snug mt-0.5">Real-time enterprise
+                                            data processing at scale.</p>
+                                    </div>
+                                </a>
+                                <a class="flex items-start gap-3 p-3 hover:bg-gray-50 rounded-lg group/item transition-colors"
+                                    href="#">
+                                    <div
+                                        class="w-8 h-8 rounded-md bg-indigo-50 flex items-center justify-center text-indigo-600 shrink-0">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                            <path
+                                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-semibold text-gray-900">Security Suite</p>
+                                        <p class="text-[12px] text-gray-500 leading-snug mt-0.5">Bank-grade encryption
+                                            &amp; SOC2 compliance.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Dropdown: Solutions -->
+                    <div class="relative group" data-purpose="nav-item-dropdown">
+                        <button
+                            class="flex items-center px-4 py-2 text-[14px] font-medium text-gray-600 hover:text-indigo-600 rounded-md hover:bg-gray-50 transition-all duration-200">
+                            Solutions
+                            <svg class="ml-1 h-3.5 w-3.5 opacity-60" fill="currentColor" viewbox="0 0 20 20">
+                                <path clip-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    fill-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-content absolute left-0 mt-1 w-56 bg-white border border-gray-100 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] rounded-xl p-2 z-50">
+                            <div class="space-y-1">
+                                <a class="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-50 rounded-md transition-colors"
+                                    href="#">Financial Services</a>
+                                <a class="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-50 rounded-md transition-colors"
+                                    href="#">Healthcare Systems</a>
+                                <a class="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-50 rounded-md transition-colors"
+                                    href="#">Global Logistics</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="px-4 py-2 text-[14px] font-medium text-gray-600 hover:text-indigo-600 rounded-md hover:bg-gray-50 transition-all duration-200"
+                        href="#">Pricing</a>
+                    <a class="px-4 py-2 text-[14px] font-medium text-gray-600 hover:text-indigo-600 rounded-md hover:bg-gray-50 transition-all duration-200"
+                        href="#">Enterprise</a>
+                </div>
+                <!-- CTA Section -->
+                <div class="flex items-center space-x-3" data-purpose="auth-cta-group">
+                    <a class="hidden sm:inline-flex text-[14px] font-medium text-gray-600 hover:text-gray-900 px-4 py-2 transition-colors"
+                        data-purpose="login-btn" href="#">Log in</a>
+                    <a class="inline-flex items-center bg-indigo-600 hover:bg-indigo-700 text-white text-[14px] font-semibold py-2 px-5 rounded-lg transition-all shadow-[0_1px_2px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_12px_rgba(79,70,229,0.3)] active:scale-[0.98]"
+                        data-purpose="get-started-btn" href="#">
+                        Get Started
+                    </a>
+                    <!-- Mobile Menu Button -->
+                    <div class="lg:hidden flex items-center pl-2">
+                        <button class="text-gray-500 hover:text-indigo-600 p-1 transition-colors"
+                            id="mobile-menu-toggle">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END: MainNavigationBar -->
+        <!-- BEGIN: MobileMenuOverlay -->
+        <div class="hidden lg:hidden bg-white border-t border-gray-100 overflow-hidden" data-purpose="mobile-nav"
+            id="mobile-menu">
+            <div class="px-4 py-6 space-y-1">
+                <a class="block px-3 py-3 text-base font-semibold text-gray-900 hover:bg-gray-50 rounded-lg"
+                    href="#">Platform</a>
+                <a class="block px-3 py-3 text-base font-semibold text-gray-900 hover:bg-gray-50 rounded-lg"
+                    href="#">Solutions</a>
+                <a class="block px-3 py-3 text-base font-semibold text-gray-900 hover:bg-gray-50 rounded-lg"
+                    href="#">Pricing</a>
+                <a class="block px-3 py-3 text-base font-semibold text-gray-900 hover:bg-gray-50 rounded-lg"
+                    href="#">Enterprise</a>
+                <div class="pt-4 mt-4 border-t border-gray-100 space-y-3 px-3">
+                    <a class="block w-full text-center font-bold text-gray-600 py-3 rounded-lg border border-gray-200"
+                        href="#">Log in</a>
+                    <a class="block w-full text-center bg-indigo-600 text-white font-bold py-3 rounded-lg" href="#">Get
+                        Started</a>
+                </div>
+            </div>
+        </div>
+        <!-- END: MobileMenuOverlay -->
+    </nav>
+    <!-- END: MultiTierNavbar -->
+    <main class="max-w-7xl mx-auto py-24 px-4 text-center">
+        <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold mb-6 border border-indigo-100">
+            <span class="relative flex h-2 w-2">
+                <span
+                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+            </span>
+            v2.0 is now live
+        </div>
+        <h1 class="text-5xl font-extrabold text-gray-900 tracking-tight leading-[1.1]">
+            Enterprise Dashboard Content
+        </h1>
+        <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            The navigation above illustrates a professional multi-tiered SaaS header design, refined for clarity and
+            aesthetic precision.
+        </p>
+    </main>
+    <script data-purpose="mobile-menu-logic">
+        // Logic to toggle mobile menu visibility
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Modern SaaS Navbar</title>
+    <!-- BEGIN: Scripts -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            purple: '#6366f1',
+                            blue: '#3b82f6',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- END: Scripts -->
+    <!-- BEGIN: Custom Styles -->
+    <style data-purpose="gradient-animations">
+        /* Stripe-inspired mesh gradient background */
+        .bg-mesh-gradient {
+            background-color: #f8fafc;
+            background-image:
+                radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+                radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+            background-size: 100% 400px;
+            background-repeat: no-repeat;
+        }
+
+        /* Sophisticated glassmorphism */
+        .nav-glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Refined button styles */
+        .btn-primary {
+            background: white;
+            color: #0f172a;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-primary:hover {
+            background: #f8fafc;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.2);
+        }
+    </style>
+    <!-- END: Custom Styles -->
+</head>
+
+<body class="bg-slate-950 font-sans bg-mesh-gradient min-h-screen">
+    <!-- BEGIN: MainHeader -->
+    <header class="w-full sticky top-0 z-50">
+        <nav class="nav-glass py-3 px-6 md:px-8 flex items-center justify-between" data-purpose="primary-navigation">
+            <!-- BEGIN: LogoSection -->
+            <div class="flex items-center gap-3" data-purpose="brand-identity">
+                <div
+                    class="w-8 h-8 bg-gradient-to-tr from-brand-purple to-brand-blue rounded-lg flex items-center justify-center shadow-lg shadow-indigo-500/20">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2.5"></path>
+                    </svg>
+                </div>
+                <span class="text-white font-semibold text-lg tracking-tight">SaaSFlow</span>
+            </div>
+            <!-- END: LogoSection -->
+            <!-- BEGIN: NavigationLinks -->
+            <div class="hidden md:flex items-center space-x-1" data-purpose="nav-links">
+                <a class="px-3 py-2 text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 font-medium text-[13px]"
+                    href="#">Product</a>
+                <a class="px-3 py-2 text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 font-medium text-[13px]"
+                    href="#">Solutions</a>
+                <a class="px-3 py-2 text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 font-medium text-[13px]"
+                    href="#">Pricing</a>
+                <a class="px-3 py-2 text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all duration-200 font-medium text-[13px]"
+                    href="#">Resources</a>
+            </div>
+            <!-- END: NavigationLinks -->
+            <!-- BEGIN: ActionButtons -->
+            <div class="flex items-center gap-6" data-purpose="nav-actions">
+                <a class="hidden sm:block text-slate-300 font-medium text-[13px] hover:text-white transition-colors"
+                    href="#">Login</a>
+                <!-- CTA: Book a Demo -->
+                <button class="btn-primary px-5 py-2 rounded-lg font-semibold text-[13px] active:scale-95"
+                    data-purpose="primary-cta" id="cta-book-demo">
+                    Book a Demo
+                </button>
+                <!-- Mobile Menu Toggle -->
+                <button class="md:hidden text-slate-300 hover:text-white" data-purpose="mobile-menu-toggle">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- END: ActionButtons -->
+        </nav>
+    </header>
+    <!-- BEGIN: MobileMenu -->
+    <div class="hidden md:hidden nav-glass border-t border-white/10" data-purpose="mobile-menu" id="mobile-menu">
+        <div class="px-6 pt-3 pb-5 space-y-1">
+            <a class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all" href="#">Product</a>
+            <a class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all" href="#">Solutions</a>
+            <a class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all" href="#">Pricing</a>
+            <a class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all" href="#">Resources</a>
+            <div class="pt-3 border-t border-white/10 flex flex-col gap-2">
+                <a class="block text-center px-4 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-md transition-all" href="#">Login</a>
+                <button class="btn-primary w-full px-4 py-2.5 rounded-lg font-semibold text-[13px] active:scale-95" data-purpose="primary-cta-mobile">Book a Demo</button>
+            </div>
+        </div>
+    </div>
+    <!-- END: MobileMenu -->
+    <!-- END: MainHeader -->
+    <!-- BEGIN: ScriptHandlers -->
+    <script data-purpose="interaction-handlers">
+        document.getElementById('cta-book-demo').addEventListener('click', function () {
+            console.log('Book a Demo clicked - navigating to scheduling workflow...');
+        });
+
+        const toggle = document.querySelector('[data-purpose="mobile-menu-toggle"]');
+        const menu = document.getElementById('mobile-menu');
+        const openIcon = `<path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>`;
+        const closeIcon = `<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>`;
+
+        toggle.addEventListener('click', () => {
+            const isOpen = !menu.classList.toggle('hidden');
+            toggle.querySelector('svg').innerHTML = isOpen ? closeIcon : openIcon;
+        });
+    </script>
+    <!-- END: ScriptHandlers -->
+</body>
+
+</html>

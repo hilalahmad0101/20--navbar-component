@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Modern SaaS Navbar</title>
+    <!-- Load Tailwind CSS v3 with plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- BEGIN: Typography Styles -->
+    <style data-purpose="typography">
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+    <!-- END: Typography Styles -->
+    <!-- BEGIN: Custom Transitions -->
+    <style data-purpose="animations">
+        .nav-link-transition {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .cta-button-transition {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+    <!-- END: Custom Transitions -->
+</head>
+
+<body class="bg-[#fcfcfd] text-slate-900">
+    <!-- BEGIN: MainHeader -->
+    <header class="w-full border-b border-slate-200/60 bg-white/70 nav-blur sticky top-0 z-50"
+        data-purpose="main-navigation-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- BEGIN: LogoSection -->
+                <div class="flex-shrink-0 flex items-center" data-purpose="logo-container">
+                    <a class="flex items-center gap-2.5 group" href="/">
+                        <!-- Refined Logo Placeholder -->
+                        <div
+                            class="w-8 h-8 bg-indigo-600 rounded-md flex items-center justify-center shadow-sm group-hover:bg-indigo-500 transition-colors">
+                            <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2.5"></path>
+                            </svg>
+                        </div>
+                        <span class="text-[17px] font-semibold tracking-tight text-slate-900">SaaS<span
+                                class="text-slate-500 font-medium">Flow</span></span>
+                    </a>
+                </div>
+                <!-- END: LogoSection -->
+                <!-- BEGIN: NavLinksAndCTA -->
+                <nav class="hidden md:flex items-center space-x-8" data-purpose="desktop-navigation">
+                    <!-- Main Links -->
+                    <div class="flex items-center space-x-7">
+                        <a class="nav-link-transition text-[14px] font-medium text-slate-500 hover:text-indigo-600"
+                            href="#">Home</a>
+                        <a class="nav-link-transition text-[14px] font-medium text-slate-500 hover:text-indigo-600"
+                            href="#features">Features</a>
+                        <a class="nav-link-transition text-[14px] font-medium text-slate-500 hover:text-indigo-600"
+                            href="#pricing">Pricing</a>
+                        <a class="nav-link-transition text-[14px] font-medium text-slate-500 hover:text-indigo-600"
+                            href="#about">About</a>
+                    </div>
+                    <!-- Subtle Divider -->
+                    <div aria-hidden="true" class="h-4 w-px bg-slate-200/80"></div>
+                    <!-- Call to Action -->
+                    <div class="flex items-center space-x-4" data-purpose="cta-container">
+                        <a class="nav-link-transition text-[14px] font-medium text-slate-500 hover:text-slate-900 px-2"
+                            href="/login">Log in</a>
+                        <a class="cta-button-transition inline-flex items-center justify-center px-4 py-2 border border-slate-900 text-[14px] font-semibold rounded-lg text-white bg-slate-900 hover:bg-slate-800 shadow-sm"
+                            href="/get-started">
+                            Get Started
+                        </a>
+                    </div>
+                </nav>
+                <!-- END: NavLinksAndCTA -->
+                <!-- BEGIN: MobileMenuButton -->
+                <div class="md:hidden flex items-center">
+                    <button aria-expanded="false"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-slate-500 hover:text-slate-900 hover:bg-slate-50 focus:outline-none transition-colors"
+                        id="mobile-menu-toggle" type="button">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Icon when menu is closed -->
+                        <svg aria-hidden="true" class="block h-5 w-5" fill="none" stroke="currentColor"
+                            viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"></path>
+                        </svg>
+                    </button>
+                </div>
+                <!-- END: MobileMenuButton -->
+            </div>
+        </div>
+        <!-- BEGIN: MobileMenuContent -->
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="hidden md:hidden" data-purpose="mobile-navigation-dropdown" id="mobile-menu">
+            <div class="px-3 pt-2 pb-4 space-y-1 bg-white border-b border-slate-100 shadow-xl">
+                <a class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-slate-50"
+                    href="#">Home</a>
+                <a class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-slate-50"
+                    href="#features">Features</a>
+                <a class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-slate-50"
+                    href="#pricing">Pricing</a>
+                <a class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-slate-50"
+                    href="#about">About</a>
+                <div class="mt-4 pt-4 border-t border-slate-50 px-3 space-y-3">
+                    <a class="block text-center text-sm font-medium text-slate-600 hover:text-slate-900"
+                        href="/login">Log in</a>
+                    <a class="w-full flex items-center justify-center px-4 py-3 border border-transparent text-sm font-semibold rounded-lg text-white bg-slate-900 hover:bg-slate-800"
+                        href="/get-started">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- END: MobileMenuContent -->
+    </header>
+    <!-- END: MainHeader -->
+    <!-- Main Content Placeholder to demonstrate sticky navbar -->
+    <main class="min-h-[200vh] bg-[#fcfcfd] pt-24">
+        <div class="max-w-7xl mx-auto px-4 py-20 text-center">
+            <h1 class="text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl mb-6">Building the future of
+                workflow.</h1>
+            <p class="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">A professional, minimal navigation
+                experience designed for modern software companies. Refined for clarity and performance.</p>
+        </div>
+    </main>
+    <!-- BEGIN: Navigation Script -->
+    <script data-purpose="event-handlers">
+        // Simple toggle for mobile menu
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    menuToggle.setAttribute('aria-expanded', 'true');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+    </script>
+    <!-- END: Navigation Script -->
+</body>
+
+</html>

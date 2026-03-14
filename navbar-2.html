@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Modern SaaS Navbar</title>
+    <!-- BEGIN: Tailwind CSS Integration -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- END: Tailwind CSS Integration -->
+    <!-- BEGIN: Custom Typography Styles -->
+    <style data-purpose="typography">
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+    <!-- END: Custom Typography Styles -->
+    <!-- BEGIN: Layout Styles -->
+    <style data-purpose="layout-refinements">
+        .nav-link {
+            @apply text-[13px] font-medium text-slate-500 hover:text-slate-900 transition-all duration-200 tracking-tight;
+        }
+
+        .navbar-container {
+            @apply max-w-6xl mx-auto px-6;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+    <!-- END: Layout Styles -->
+</head>
+
+<body class="bg-[#fcfcfd]">
+    <!-- BEGIN: Modern SaaS Navbar -->
+    <nav class="sticky top-0 px-12 z-50 glass-effect border-b border-slate-200/60" data-purpose="main-navigation">
+        <div class="navbar-container">
+            <div class="flex justify-between items-center h-14">
+                <!-- BEGIN: Left Navigation Links -->
+                <div class="flex-1 flex justify-start space-x-6" data-purpose="left-nav-group">
+                    <!-- Products Link -->
+                    <a aria-label="Products" class="nav-link" href="#">
+                        Products
+                    </a>
+                    <!-- Solutions Link -->
+                    <a aria-label="Solutions" class="nav-link" href="#">
+                        Solutions
+                    </a>
+                </div>
+                <!-- END: Left Navigation Links -->
+                <!-- BEGIN: Centered Logo -->
+                <div class="flex-shrink-0 flex items-center justify-center px-4" data-purpose="logo-container">
+                    <a aria-label="Go to homepage" class="flex items-center gap-2 group" href="/">
+                        <!-- Representational SaaS Logo (Linear/Stripe inspired) -->
+                        <div
+                            class="w-7 h-7 bg-indigo-600 rounded-md flex items-center justify-center shadow-sm group-hover:bg-indigo-700 transition-colors">
+                            <div class="w-3.5 h-3.5 border-[1.5px] border-white/90 rounded-sm rotate-45"></div>
+                        </div>
+                        <span class="text-[15px] font-semibold tracking-tight text-slate-900">DataStore</span>
+                    </a>
+                </div>
+                <!-- END: Centered Logo -->
+                <!-- BEGIN: Right Navigation Links -->
+                <div class="flex-1 flex justify-end items-center space-x-6" data-purpose="right-nav-group">
+                    <!-- Pricing Link -->
+                    <a aria-label="Pricing" class="nav-link" href="#">
+                        Pricing
+                    </a>
+                    <!-- Login/CTA Button -->
+                    <a aria-label="Login"
+                        class="inline-flex items-center justify-center px-4 py-1.5 border border-slate-200 text-[13px] font-medium rounded-full text-slate-700 bg-white hover:bg-slate-50 hover:border-slate-300 transition-all duration-200 shadow-[0_1px_2px_rgba(0,0,0,0.05)]"
+                        href="#">
+                        Log in
+                    </a>
+                </div>
+                <!-- END: Right Navigation Links -->
+            </div>
+        </div>
+        <!-- BEGIN: Mobile Menu (Hidden by default) -->
+        <div class="md:hidden hidden" data-purpose="mobile-nav-menu" id="mobile-menu">
+            <div class="px-6 py-4 space-y-3 bg-white border-t border-slate-100">
+                <a class="block text-sm font-medium text-slate-600 hover:text-slate-900" href="#">Products</a>
+                <a class="block text-sm font-medium text-slate-600 hover:text-slate-900" href="#">Solutions</a>
+                <a class="block text-sm font-medium text-slate-600 hover:text-slate-900" href="#">Pricing</a>
+                <a class="block text-sm font-medium text-indigo-600" href="#">Log in</a>
+            </div>
+        </div>
+        <!-- END: Mobile Menu -->
+    </nav>
+    <!-- END: Modern SaaS Navbar -->
+    <!-- Placeholder content -->
+    <main class="py-32 text-center px-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 mb-8">
+            <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 animate-pulse"></span>
+            <span class="text-[12px] font-semibold text-indigo-700 uppercase tracking-wider">v2.0 is live</span>
+        </div>
+        <h1 class="text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">The new standard for <br
+                class="hidden sm:block" /> data management.</h1>
+        <p class="text-lg text-slate-500 max-w-xl mx-auto leading-relaxed">Build faster, scale further, and understand
+            your data <br class="hidden sm:block" /> like never before with our automated platform.</p>
+        <div class="mt-10 flex items-center justify-center gap-4">
+            <button
+                class="px-6 py-2.5 bg-slate-900 text-white rounded-full text-sm font-medium hover:bg-slate-800 transition-all shadow-lg shadow-slate-200">Start
+                for free</button>
+            <button
+                class="px-6 py-2.5 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium hover:bg-slate-50 transition-all">Book
+                a demo</button>
+        </div>
+    </main>
+</body>
+
+</html>

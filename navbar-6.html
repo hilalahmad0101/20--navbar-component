@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Modern SaaS Navbar</title>
+    <!-- BEGIN: Scripts -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#0066FF',
+                            dark: '#0A0A0B',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <!-- END: Scripts -->
+    <style data-purpose="custom-blur-effect">
+        .navbar-glass {
+            backdrop-filter: blur(12px) saturate(180%);
+            -webkit-backdrop-filter: blur(12px) saturate(180%);
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Subtle border bottom glow */
+        .navbar-border {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+
+<body class="bg-[#F9FAFB] min-h-screen font-sans text-slate-900">
+    <!-- BEGIN: MainHeader -->
+    <header class="sticky top-0 z-50 w-full navbar-glass navbar-border" data-purpose="primary-navigation">
+        <nav aria-label="Global navigation"
+            class="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <!-- BEGIN: BrandLogo -->
+            <div class="flex flex-shrink-0 items-center" data-purpose="logo-container">
+                <a class="flex items-center gap-2.5 group" href="#">
+                    <!-- Logo Icon: Refined for premium SaaS feel -->
+                    <div
+                        class="h-8 w-8 rounded-lg bg-black flex items-center justify-center group-hover:bg-slate-800 transition-all duration-200 shadow-sm">
+                        <svg class="h-4 w-4 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2.5"></path>
+                        </svg>
+                    </div>
+                    <span class="text-[15px] font-semibold tracking-[-0.01em] text-slate-900">DataStore</span>
+                </a>
+            </div>
+            <!-- END: BrandLogo -->
+            <!-- BEGIN: DesktopNavLinks -->
+            <div class="hidden md:flex md:items-center md:gap-x-7" data-purpose="desktop-menu">
+                <div class="flex items-center gap-x-6">
+                    <a class="text-[13px] font-medium text-slate-500 hover:text-slate-900 transition-colors"
+                        href="#features">Features</a>
+                    <a class="text-[13px] font-medium text-slate-500 hover:text-slate-900 transition-colors"
+                        href="#solutions">Solutions</a>
+                    <a class="text-[13px] font-medium text-slate-500 hover:text-slate-900 transition-colors"
+                        href="#pricing">Pricing</a>
+                    <a class="text-[13px] font-medium text-slate-500 hover:text-slate-900 transition-colors"
+                        href="#docs">Documentation</a>
+                </div>
+                <!-- Subtle Vertical Divider -->
+                <div aria-hidden="true" class="h-4 w-px bg-slate-200/80"></div>
+                <div class="flex items-center gap-x-5">
+                    <a class="text-[13px] font-medium text-slate-600 hover:text-slate-900 transition-colors"
+                        href="/login">Log in</a>
+                    <a class="rounded-full bg-slate-900 px-4 py-1.5 text-[13px] font-medium text-white shadow-sm hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 transition-all active:scale-[0.98]"
+                        href="/signup">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+            <!-- END: DesktopNavLinks -->
+            <!-- BEGIN: MobileMenuButton -->
+            <div class="flex md:hidden">
+                <button
+                    class="inline-flex items-center justify-center rounded-md p-2 text-slate-500 hover:bg-slate-100 transition-colors"
+                    data-purpose="mobile-toggle" type="button">
+                    <span class="sr-only">Open main menu</span>
+                    <svg aria-hidden="true" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"
+                        viewbox="0 0 24 24">
+                        <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- END: MobileMenuButton -->
+        </nav>
+    </header>
+    <!-- BEGIN: MobileMenu -->
+    <div class="hidden md:hidden navbar-glass navbar-border" data-purpose="mobile-menu" id="mobile-menu">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-2 pb-4 space-y-1">
+            <a class="block px-3 py-2.5 text-[13px] font-medium text-slate-500 hover:text-slate-900 hover:bg-slate-100/60 rounded-lg transition-colors" href="#features">Features</a>
+            <a class="block px-3 py-2.5 text-[13px] font-medium text-slate-500 hover:text-slate-900 hover:bg-slate-100/60 rounded-lg transition-colors" href="#solutions">Solutions</a>
+            <a class="block px-3 py-2.5 text-[13px] font-medium text-slate-500 hover:text-slate-900 hover:bg-slate-100/60 rounded-lg transition-colors" href="#pricing">Pricing</a>
+            <a class="block px-3 py-2.5 text-[13px] font-medium text-slate-500 hover:text-slate-900 hover:bg-slate-100/60 rounded-lg transition-colors" href="#docs">Documentation</a>
+            <div class="pt-3 border-t border-slate-200/80 flex flex-col gap-2">
+                <a class="block text-center px-4 py-2.5 text-[13px] font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100/60 rounded-lg transition-colors" href="/login">Log in</a>
+                <a class="block text-center rounded-full bg-slate-900 px-4 py-2.5 text-[13px] font-medium text-white hover:bg-slate-800 transition-all active:scale-[0.98]" href="/signup">Get Started</a>
+            </div>
+        </div>
+    </div>
+    <!-- END: MobileMenu -->
+    <!-- BEGIN: MainContentPlaceholder -->
+    <main class="py-24 px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center" data-purpose="hero-placeholder">
+            <h1 class="text-5xl font-extrabold tracking-tight text-slate-900 sm:text-7xl mb-8">
+                Modern SaaS Architecture
+            </h1>
+            <p class="mt-6 text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto">
+                This demonstrates the sticky navbar with a premium backdrop blur effect. Scroll down to see the
+                glassmorphism effect in action against page content.
+            </p>
+            <!-- Content spacers to force scrolling -->
+            <div class="mt-20 space-y-12">
+                <div
+                    class="h-64 w-full bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl border border-blue-100/50 flex items-center justify-center text-blue-400 font-medium">
+                    Content Section 1</div>
+                <div
+                    class="h-64 w-full bg-gradient-to-br from-slate-50 to-gray-50 rounded-3xl border border-slate-200/50 flex items-center justify-center text-slate-400 font-medium">
+                    Content Section 2</div>
+                <div
+                    class="h-64 w-full bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl border border-purple-100/50 flex items-center justify-center text-purple-400 font-medium">
+                    Content Section 3</div>
+                <div
+                    class="h-64 w-full bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl border border-green-100/50 flex items-center justify-center text-green-400 font-medium">
+                    Content Section 4</div>
+            </div>
+        </div>
+    </main>
+    <!-- END: MainContentPlaceholder -->
+    <script data-purpose="mobile-menu-toggle">
+        const toggle = document.querySelector('[data-purpose="mobile-toggle"]');
+        const menu = document.getElementById('mobile-menu');
+        const openIcon = `<path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"></path>`;
+        const closeIcon = `<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>`;
+
+        toggle.addEventListener('click', () => {
+            const isOpen = !menu.classList.toggle('hidden');
+            toggle.querySelector('svg').innerHTML = isOpen ? closeIcon : openIcon;
+        });
+    </script>
+</body>
+
+</html>
