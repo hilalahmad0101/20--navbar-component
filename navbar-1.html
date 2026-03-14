@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Modern SaaS Navbar - Refined Style</title>
+    <!-- Tailwind CSS CDN with Plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts: Inter for a clean, professional look -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <style data-purpose="typography">
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <style data-purpose="refined-styles">
+        /* Refined shadows and transitions inspired by Linear/Stripe */
+        .soft-shadow {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-glass {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .subtle-border-bottom {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+
+<body class="bg-[#fafafa] text-[#1a1a1a]">
+    <!-- BEGIN: Navigation -->
+    <nav class="w-full nav-glass subtle-border-bottom sticky top-0 z-50" data-purpose="main-navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- BEGIN: Logo Section -->
+                <div class="flex-shrink-0 flex items-center" data-purpose="logo-container">
+                    <a class="flex items-center gap-2 text-lg font-bold tracking-tight text-black" href="#">
+                        <div
+                            class="w-8 h-8 bg-black rounded-lg flex items-center justify-center text-white text-xs font-black">
+                            SC</div>
+                        <span>SAAS_CORE</span>
+                    </a>
+                </div>
+                <!-- END: Logo Section -->
+                <!-- BEGIN: Desktop Links -->
+                <div class="hidden md:flex space-x-1 items-center" data-purpose="desktop-menu">
+                    <a class="px-3 py-2 text-sm font-medium text-gray-600 hover:text-black hover:bg-gray-100/50 rounded-md transition-all"
+                        href="#">Products</a>
+                    <a class="px-3 py-2 text-sm font-medium text-gray-600 hover:text-black hover:bg-gray-100/50 rounded-md transition-all"
+                        href="#">Features</a>
+                    <a class="px-3 py-2 text-sm font-medium text-gray-600 hover:text-black hover:bg-gray-100/50 rounded-md transition-all"
+                        href="#">Pricing</a>
+                    <a class="px-3 py-2 text-sm font-medium text-gray-600 hover:text-black hover:bg-gray-100/50 rounded-md transition-all"
+                        href="#">Changelog</a>
+                </div>
+                <!-- END: Desktop Links -->
+                <!-- BEGIN: Action Buttons -->
+                <div class="flex items-center space-x-4" data-purpose="nav-actions">
+                    <a class="hidden sm:block text-sm font-medium text-gray-600 hover:text-black transition-colors"
+                        href="#">
+                        Login
+                    </a>
+                    <!-- Refined 'Download' button -->
+                    <button
+                        class="bg-black text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-800 transition-all flex items-center gap-2 soft-shadow"
+                        data-purpose="download-button">
+                        Download
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2.5"></path>
+                        </svg>
+                    </button>
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden p-2 text-gray-600 hover:bg-gray-100 rounded-md"
+                        data-purpose="mobile-menu-toggle" id="mobile-menu-button" type="button">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"></path>
+                        </svg>
+                    </button>
+                </div>
+                <!-- END: Action Buttons -->
+            </div>
+        </div>
+        <!-- BEGIN: Mobile Menu (Hidden by default) -->
+        <div class="hidden md:hidden border-t border-gray-100 bg-white" data-purpose="mobile-navigation-dropdown"
+            id="mobile-menu">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-black hover:bg-gray-50 rounded-lg"
+                    href="#">Products</a>
+                <a class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-black hover:bg-gray-50 rounded-lg"
+                    href="#">Features</a>
+                <a class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-black hover:bg-gray-50 rounded-lg"
+                    href="#">Pricing</a>
+                <a class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-black hover:bg-gray-50 rounded-lg"
+                    href="#">Login</a>
+            </div>
+        </div>
+        <!-- END: Mobile Menu -->
+    </nav>
+    <!-- END: Navigation -->
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto p-8">
+        <section class="py-24">
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-black mb-8">
+                The Future <br />Is Refined.
+            </h1>
+            <p class="text-xl text-gray-600 max-w-2xl border-l-4 border-black pl-6 py-2">
+                A sophisticated approach to SaaS design. Clean lines. Subtle depth. Pure performance and clarity.
+            </p>
+        </section>
+    </main>
+    <script data-purpose="mobile-menu-logic">
+        // Simple toggle for mobile menu visibility
+        const mobileBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
